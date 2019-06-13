@@ -445,6 +445,8 @@ body {
   z-index: 999; }
   #masthead .navbar > * {
     flex-shrink: 0; }
+  #masthead a:active {
+    outline: none; }
 
 #masthead.masthead--medium .navbar, #masthead.masthead--small .navbar {
   flex-wrap: wrap; }

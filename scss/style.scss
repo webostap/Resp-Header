@@ -45,6 +45,10 @@ body {
   .navbar > * {
     flex-shrink: 0;
   }
+
+  a:active {
+    outline: none;
+  }
 }
 
 #masthead.masthead {
