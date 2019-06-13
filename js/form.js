@@ -26,7 +26,7 @@ function OrderForm(formId) {
         return false;
     }
 
-    if (!name.parentElement.classList.contains('is-dirty') || phone.value.replace(/ /g, '').length != 14) {
+    if (!name.parentElement.classList.contains('is-dirty') || phone.value.replace(/ /g, '').length < 7) {
       emptyError.classList.add('is-active');
       return false;
     }
