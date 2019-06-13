@@ -1,0 +1,294 @@
+@import "items";
+
+$pop-time: .25s;
+
+#pop {
+  z-index: 997;
+  position: fixed;
+  @extend .cover;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  visibility: hidden;
+  transition: top .2s, visibility 0s $pop-time;
+
+  &.is-opening {
+    transition: top 0s, visibility 0s !important;
+    %pop-wrapper {
+      overflow: hidden !important;
+    }
+  }
+}
+
+%pop-wrapper {
+  @extend .cover;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+  transition: 0s $pop-time;
+
+  &--active {
+    visibility: visible;
+    transition: 0s;
+    overflow: auto;
+  }
+}
+
+%pop-item {
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: $pop-time ease, visibility 0s $pop-time;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: $pop-time ease, visibility 0s 0s;
+  }
+}
+
+$popClasses: ("pop-order", "side-nav");
+
+@each $pop in $popClasses {
+
+  .#{$pop} {
+    @extend %pop-item;
+
+    &__w {
+      @extend %pop-wrapper;
+    }
+  }
+
+  #pop.o-#{$pop} {
+    .#{$pop} {
+      @extend %pop-item--active;
+
+      &__w {
+        @extend %pop-wrapper--active;
+      }
+    }
+  }
+}
+
+
+.pop-overlay {
+  @extend .cover;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: $pop-time;
+}
+
+body.pop {
+  overflow: hidden;
+  padding-right: var(--scrollBar);
+
+  #pop {
+    right: var(--scrollBar);
+    transition: top .2s, visibility 0s;
+    visibility: visible;
+  }
+
+  .pop-overlay {
+    opacity: 1;
+    transition: .15s;
+  }
+
+}
+
+
+
+
+
+.side {
+  &-nav {
+    a {
+      font-size: 20px;
+    }
+  }
+
+  &-menu {
+    @extend %side-menus;
+    margin-bottom: 12px;
+  }
+
+  &-contact {
+    @extend %side-menus;
+  }
+
+  &-tel > a {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 0;
+
+    &:before {
+      content: "";
+      background: url("/../images/icons8-phone-filled-30.png") no-repeat center / 25px;
+      display: block;
+      position: absolute;
+      width: 25px;
+      height: 35px;
+      left: 35px;
+      top: 12px;
+    }
+  }
+
+  &-order > a {
+    color: white;
+    background: var(--primary);
+
+    &:hover {
+      background: var(--primary);
+    }
+
+  }
+
+}
+
+.pop-order {
+  width: 900px;
+  max-width: calc(100% - 30px);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+
+  &__head {
+    background: var(--primary);
+    color: white;
+    padding: 10px 0 10px 20px;
+    display: flex;
+    align-items: center;
+
+    h4 {
+      margin: 0;
+      text-align: center;
+      flex: 1;
+    }
+  }
+
+  &__close {
+    margin-right: 30px;
+  }
+
+  &__body {
+    background: white;
+    padding: 30px;
+  }
+
+  &__text {
+    padding: 20px 0 0 30px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    align-self: flex-end;
+  }
+
+
+}
+
+@media screen and (max-width: #{$grid-desktop-breakpoint}) {
+  .order-form {
+
+    flex-direction: row;
+    justify-content: space-around;
+
+    > * {
+      max-width: 33%;
+    }
+
+    button {
+      align-self: center;
+    }
+
+
+  }
+
+  .pop-order__text {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pop-order {
+    width: 350px;
+
+    &__close {
+      margin-right: 5px;
+    }
+
+    &__head {
+      h4 {
+        font-size: 20px;
+        line-height: 1.2em
+      }
+    }
+
+    &__body {
+      padding: 15px;
+    }
+
+    &__text {
+      padding: 10px 0 0;
+        margin-bottom: -10px;
+    }
+
+    &__tel {
+      display: block;
+    }
+  }
+
+  .order-form {
+    order: 1;
+    flex-direction: column;
+    justify-content: space-around;
+
+    > * {
+      max-width: 100%;
+    }
+
+    button {
+      align-self: flex-end;
+    }
+
+  }
+}
+
+  @media screen and (max-width: 330px) {
+    .pop-order {
+      &__head {
+        h4 {
+          font-size: 18px;
+        }
+      }
+    &__close {
+      margin-right: 0;
+    }
+
+      &__body {
+        padding: 15px;
+      }
+
+      &__text {
+        padding: 10px 0 0;
+        margin-bottom: -10px;
+      }
+
+    }
+
+  }
