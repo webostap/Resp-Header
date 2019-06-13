@@ -104,13 +104,16 @@ function NewResponsiveLayout() {
 
     if (HeadState == 1) {
       var trans = parseFloat(getComputedStyle(main_menu)['transitionDuration']) * 1000;
-      main_menu.classList.toggle("is-open");
 
       main_menu.classList.toggle("is-opening");
       setTimeout(function () {
         main_menu.classList.toggle("is-opening");
-        pop.style.top = masthead.offsetHeight + 'px';
+        if (main_menu.classList.contains('is-open')) {
+          pop.style.top = masthead.offsetHeight + 'px';
+        }
       }, trans);
+
+      main_menu.classList.toggle("is-open");
 
     }
     if (HeadState == 2) {
@@ -136,11 +139,11 @@ function NewResponsiveLayout() {
 
         document.body.classList.add("pop");
         pop.className = "o-pop-order";
+        pop.style.top = masthead.offsetHeight + 'px';
 
         pop.classList.toggle('is-opening');
         setTimeout(function () {
           pop.classList.toggle('is-opening');
-          pop.style.top = masthead.offsetHeight + 'px';
         }, 250);
 
         if (HeadState == 2) {
