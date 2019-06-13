@@ -44,7 +44,7 @@ function NewResponsiveLayout() {
 
 
   function setSubMenus() {
-    for (let i = 0; i < sub_menus.length; i++){
+    for (let i = 0; i < sub_menus.length; i++) {
       let parentLeft = -sub_menus[i].parentElement.offsetLeft;
       let subMenuLeft = (sub_menus[i].parentElement.offsetWidth - sub_menus[i].offsetWidth) / 2;
       if (HeadState == 1) {
@@ -55,7 +55,7 @@ function NewResponsiveLayout() {
 
   function getMenuWidth() {
     var menu_width = 0;
-    for (let i = 0; i < main_menuCh.length; i++){
+    for (let i = 0; i < main_menuCh.length; i++) {
       menu_width += main_menuCh[i].offsetWidth;
       menu_width += 20; //margin
     }
@@ -101,7 +101,6 @@ function NewResponsiveLayout() {
   headButt.onclick = function () {
     headButt.classList.toggle("is-active");
 
-    pop.style.top = masthead.offsetHeight + 'px';
 
     if (HeadState == 1) {
       var trans = parseFloat(getComputedStyle(main_menu)['transitionDuration']) * 1000;
@@ -110,6 +109,7 @@ function NewResponsiveLayout() {
       main_menu.classList.toggle("is-opening");
       setTimeout(function () {
         main_menu.classList.toggle("is-opening");
+        pop.style.top = masthead.offsetHeight + 'px';
       }, trans);
 
     }
@@ -121,9 +121,9 @@ function NewResponsiveLayout() {
         document.body.classList.toggle("pop");
 
         pop.classList.toggle('is-opening');
-        setTimeout(function(){
+        setTimeout(function () {
           pop.classList.toggle('is-opening');
-        },250);
+        }, 250);
 
       }
     }
@@ -134,15 +134,14 @@ function NewResponsiveLayout() {
       order_call.onclick = function (e) {
         e.preventDefault;
 
-        pop.style.top = masthead.offsetHeight + 'px';
-
         document.body.classList.add("pop");
         pop.className = "o-pop-order";
 
         pop.classList.toggle('is-opening');
-        setTimeout(function(){
+        setTimeout(function () {
           pop.classList.toggle('is-opening');
-        },250);
+          pop.style.top = masthead.offsetHeight + 'px';
+        }, 250);
 
         if (HeadState == 2) {
           headButt.classList.remove("is-active");
