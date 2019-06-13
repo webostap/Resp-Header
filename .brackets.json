@@ -1,19 +1,20 @@
 {
-    "sass.enabled": false,
-    "sass.options": {
-        "outputDir": "../css/",
-        "includePaths": [],
-        "sourceComments": false,
-        "outputStyle": "nested"
+  "sass.enabled": false,
+  "sass.options": {
+    "outputDir": "../css/",
+    "includePaths": [],
+    "sourceComments": false,
+    "outputStyle": "nested"
+  },
+  "path": {
+    "scss/style.scss": {
+      "sass.enabled": true,
+      "linting.collapsed": false,
+      "brackets-git.gitPath": "git"
     },
-    "path": {
-        "scss/style.scss": {
-            "sass.enabled": true,
-            "linting.collapsed": false
-        },
-        "scss/mdl.scss": {
-            "sass.enabled": true,
-            "linting.collapsed": true
-        }
+    "scss/mdl.scss": {
+      "sass.enabled": true,
+      "linting.collapsed": true
     }
+  }
 }
