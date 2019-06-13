@@ -428,6 +428,9 @@ body {
   html {
     scroll-behavior: auto; } }
 
+html {
+  --scroll-behavior: smooth; }
+
 body {
   box-sizing: border-box; }
 
