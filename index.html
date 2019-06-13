@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -111,12 +112,12 @@
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" name="name" pattern="[А-Я,а-я, ]*">
               <label class="mdl-textfield__label" for="name">Имя</label>
-            <span class="mdl-textfield__error">Только русские буквы</span>
+              <span class="mdl-textfield__error">Только русские буквы</span>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" name="phone" pattern="[0-9,+,(,), ]*">
               <label class="mdl-textfield__label" for="phone">Телефон</label>
-            <span class="mdl-textfield__error">Только цифры</span>
+              <span class="mdl-textfield__error">Только цифры</span>
             </div>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
               отправить
@@ -138,12 +139,12 @@
       <div class="pop-close cover"></div>
       <nav class="side-nav">
         <ul class="side-menu">
-        <li><a href="#one">Решения</a></li>
-        <li><a href="#two">Оборудование</a></li>
-        <li><a href="#three">О компании</a></li>
-        <li><a href="#four">Наши клиенты</a></li>
-        <li><a href="#five">Сертификаты</a></li>
-        <li><a href="#six">Контакты</a></li>
+          <li><a href="#one">Решения</a></li>
+          <li><a href="#two">Оборудование</a></li>
+          <li><a href="#three">О компании</a></li>
+          <li><a href="#four">Наши клиенты</a></li>
+          <li><a href="#five">Сертификаты</a></li>
+          <li><a href="#six">Контакты</a></li>
         </ul>
         <ul class="side-contact">
           <li class="side-tel"><a href="tel:+7(423)26-600-26">+7 (423) 26-600-26</a></li>
@@ -155,7 +156,7 @@
   </div>
 
 
-<!--
+  <!--
   <script src="mdl/mdlComponentHandler.js"></script>
   <script src="mdl/button/button.js"></script>
   <script src="mdl/ripple/ripple.js"></script>
@@ -169,4 +170,12 @@
   <script src="js/form.js"></script>
   <script src="js/main.js"></script>
 
-</body></html>
+  <script type="module" src="js/smoothscroll.js"></script>
+  <script type="module">
+    import {smoothscroll} from './smoothscroll';
+    smoothscroll.polyfill();
+  </script>
+
+</body>
+
+</html>
