@@ -108,9 +108,7 @@ function NewResponsiveLayout() {
       main_menu.classList.toggle("is-opening");
       setTimeout(function () {
         main_menu.classList.toggle("is-opening");
-        if (main_menu.classList.contains('is-open')) {
-          pop.style.top = masthead.offsetHeight + 'px';
-        }
+        pop.style.top = masthead.offsetHeight + 'px';
       }, trans);
 
       main_menu.classList.toggle("is-open");
