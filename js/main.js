@@ -115,6 +115,7 @@ function NewResponsiveLayout() {
 
     }
     if (HeadState == 2) {
+      pop.style.top = masthead.offsetHeight + 'px';
       if (pop.className == "o-pop-order") {
         pop.className = "o-side-nav";
       } else {

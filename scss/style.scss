@@ -12,14 +12,20 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-html {
-  -webkit-scroll-behavior: smooth;
-  -ms-scroll-behavior: smooth;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@-moz-document url-prefix() {
+  body {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 
@@ -135,6 +141,7 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
 .container-max-width {
   @extend .max-width;
   width: calc(100% - 30px);
@@ -344,10 +351,11 @@ section {
 
 .empty-error {
   font-size: 12px;
-  color: rgb(213,0,0);
+  color: rgb(213, 0, 0);
   position: absolute;
   bottom: 8px;
   display: none;
+
   &.is-active {
     display: block;
   }
