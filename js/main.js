@@ -91,6 +91,12 @@ function NewResponsiveLayout() {
           pop.className = "";
           document.body.classList.remove("pop");
         }
+        if (window.innerWidth - 50 >= menu_width + logo.offsetWidth + orderButt.offsetWidth) {
+          aHeadState = 0;
+          masthead.className = '';
+          main_menu.classList.remove("is-open");
+          headButt.classList.remove("is-active");
+        }
       }
     }
     pop.style.top = masthead.offsetHeight + 'px';
