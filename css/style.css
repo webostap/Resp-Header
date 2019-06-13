@@ -618,7 +618,7 @@ body {
     box-shadow: 0 2px var(--primary); }
   .head-tel:before {
     content: "";
-    background: url("/../images/icons8-phone-filled-30.png");
+    background: url("/images/icons8-phone-filled-30.png");
     display: block;
     position: absolute;
     width: 24px;
