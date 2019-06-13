@@ -8,8 +8,8 @@ function OrderForm(formId) {
   var loadObj = {};
 
   var formattedPhone = new Formatter(phone, {
-    'pattern': '+7({{999}}) {{999}} {{99}} {{99}}',
-    'persistent': true
+    'pattern': '+7({{999}}) {{999}} {{99}} {{99}}'
+//    'persistent': true
   });
 
   for (let field of [name, phone]) {
